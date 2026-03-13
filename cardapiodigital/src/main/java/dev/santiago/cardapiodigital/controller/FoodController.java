@@ -1,5 +1,6 @@
 package dev.santiago.cardapiodigital.controller;
 
+import dev.santiago.cardapiodigital.dto.FoodResponseDTO;
 import dev.santiago.cardapiodigital.model.Food;
 import dev.santiago.cardapiodigital.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,8 @@ public class FoodController {
     private FoodRepository repository;
 
     @GetMapping
-    public List<Food> getAll(){
+    public List<FoodResponseDTO> getAll(){
+
         List<Food> foodlist = repository.findAll();
         return foodlist;
     }
